@@ -1,0 +1,54 @@
+version: '3.9'
+services:
+  postgres:
+    image: postgres:15
+    env_file:
+      - .env
+    expose:
+      - 5432
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 10s
+      retries: 5
+      start_period: 15s
+    volumes:
+      - ./database:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7.2.3
+    expose:
+      - 6379
+    healthcheck:
+      test: [ "CMD", "redis-cli","ping" ]
+      interval: 5s
+      timeout: 10s
+      retries: 5
+      start_period: 15s
+
+  online-store:
+    build: ./online_store
+    env_file:
+      - .env
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    ports:
+      - "8000:8000"
+
+  nginx:
+      image: nginx:1.19.2
+      volumes:
+        - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+        - ./nginx/config:/etc/nginx/conf.d:ro
+        - ./online_store/static:/data/static:ro
+      depends_on:
+        - online-store
+      ports:
+        - "80:80"
+
+volumes:
+  database:
+

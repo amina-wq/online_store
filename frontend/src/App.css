@@ -1,0 +1,176 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.basket-card {
+    background-color: #f4eded;
+    border-radius: 50px;
+    height: 498px;
+    overflow: hidden;
+    position: relative;
+    width: 374px;
+}
+
+.basket-card .basket-image-base {
+    background-color: #efe7e7;
+    height: 391px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 374px;
+}
+
+.basket-card .basket-image {
+    height: 391px;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 374px;
+}
+
+.basket-card .basket-info {
+    background-color: #efe7e7;
+    height: 107px;
+    left: 0;
+    position: absolute;
+    top: 391px;
+    width: 374px;
+}
+
+.basket-card .basket-title {
+    color: #000000;
+    font-family: "Caveat-Regular", Helvetica;
+    font-size: 32px;
+    font-weight: 400;
+    left: 43px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 13px;
+    white-space: nowrap;
+    width: 288px;
+}
+
+.basket-card .basket-price {
+    color: #000000;
+    font-family: "Caveat-Regular", Helvetica;
+    font-size: 24px;
+    font-weight: 400;
+    left: 43px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 47px;
+    width: 47px;
+}
+
+.basket-card .cart-button {
+    background-color: #f1d4d4;
+    border-radius: 5px;
+    height: 30px;
+    left: 320px;
+    overflow: hidden;
+    position: absolute;
+    top: 54px;
+    width: 30px;
+}
+
+.basket-card .cart-icon {
+    height: 30px;
+    left: 0;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    width: 30px;
+}
+
+.basket-list {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.basket-list .div {
+    background-color: #ffffff;
+    height: 1024px;
+    overflow: hidden;
+    position: relative;
+    width: 1440px;
+}
+
+.basket-list .basket-row {
+    height: 526px;
+    left: 0;
+    position: absolute;
+    top: 551px;
+    width: 1440px;
+}
+
+.basket-list .basket-card-instance {
+    left: 95px !important;
+    position: absolute !important;
+    top: 14px !important;
+}
+
+.basket-list .design-component-instance-node {
+    height: 14px !important;
+}
+
+.basket-list .basket-card-2 {
+    left: 533px !important;
+    position: absolute !important;
+    top: 14px !important;
+}
+
+.basket-list .basket-card-3 {
+    left: 971px !important;
+    position: absolute !important;
+    top: 14px !important;
+}
+
+.basket-list .basket-row-2 {
+    height: 526px;
+    left: 0;
+    position: absolute;
+    top: 25px;
+    width: 1440px;
+}
