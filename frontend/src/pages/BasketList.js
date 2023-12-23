@@ -1,47 +1,56 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import api from '../services/api';
 import {BasketCard} from '../components/BasketCard';
-import "../App.css";
+import ReactPaginate from 'react-paginate';
+import '../App.css';
 
 export const BasketList = () => {
-  const [baskets, setBaskets] = useState([]);
+    const [baskets, setBaskets] = useState([]);
+    const [currentPage, setCurrentPage] = useState(0);
+    const [totalPages, setTotalPages] = useState(0);
+    const itemsPerPage = 9;
 
-  useEffect(() => {
-    const fetchBaskets = async () => {
-      try {
-        const response = await api.get('/api/v1/baskets');
-        setBaskets(response.data);
-      } catch (error) {
-        console.error('Error fetching baskets:', error);
-      }
+    useEffect(() => {
+        const fetchBaskets = async () => {
+            try {
+                const response = await api.get(`/api/v1/baskets/?page=${currentPage + 1}`);
+                setBaskets(response.data.results);
+                setTotalPages(Math.ceil(response.data.count / itemsPerPage));
+            } catch (error) {
+                console.error('Error fetching baskets:', error);
+            }
+        };
+
+        fetchBaskets();
+    }, [currentPage]);
+
+    const handlePageClick = (data) => {
+        setCurrentPage(data.selected);
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
     };
 
-    fetchBaskets();
-  }, []);
-
-  const chunkSize = 3; // Number of cards in a single row
-
-  const chunkedBaskets = baskets.reduce((resultArray, item, index) => {
-    const chunkIndex = Math.floor(index / chunkSize);
-
-    if (!resultArray[chunkIndex]) {
-      resultArray[chunkIndex] = []; // start a new row
-    }
-
-    resultArray[chunkIndex].push(item);
-
-    return resultArray;
-  }, []);
-
-  return (
-      <div className="basket-list">
-          {chunkedBaskets.map((row, rowIndex) => (
-              <div key={rowIndex} className="basket-row">
-                {row.map((basket, cardIndex) => (
-                    <BasketCard key={basket.id} basket={basket} />
+    return (
+        <div className="content">
+            <div className="basket-list">
+                {baskets.map((basket) => (
+                    <BasketCard key={basket.id} basket={basket}/>
                 ))}
-              </div>
-          ))}
-      </div>
-  );
+            </div>
+            <ReactPaginate
+                previousLabel={'<- Previous'}
+                nextLabel={'Next ->'}
+                breakLabel={'...'}
+                pageCount={totalPages}
+                marginPagesDisplayed={2}
+                pageRangeDisplayed={5}
+                onPageChange={handlePageClick}
+                containerClassName={'pagination'}
+                subContainerClassName={'pages pagination'}
+                activeClassName={'active'}
+            />
+        </div>
+    );
 };

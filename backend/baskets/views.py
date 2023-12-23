@@ -1,10 +1,6 @@
-from django.http import HttpRequest, HttpResponse
 from django.utils.decorators import method_decorator
-from rest_framework import generics, viewsets
+from rest_framework import viewsets
 from django.views.decorators.cache import cache_page
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
-from rest_framework.response import Response
-from rest_framework.views import APIView
 
 from .models import Basket
 from .serializers import BasketSerializer

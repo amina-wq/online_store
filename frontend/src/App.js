@@ -1,14 +1,14 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import Home from './pages/Home';
-import ProductDetail from './components/ProductDetail';
+import BasketDetail from './components/BasketDetail';
 
 const App = () => {
   return (
     <Router>
         <Routes>
             <Route exact path="/" element={<Home />} />
-            <Route path="/products/:uid" component={ProductDetail} />
+            <Route exact path="/baskets/:uid" element={<BasketDetail />} />
         </Routes>
     </Router>
   );

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import api from '../services/api';
 
-const ProductDetail = () => {
+const BasketDetail = () => {
   const { uid } = useParams();
   const [basket, setBasket] = useState(null);
 
@@ -20,18 +20,21 @@ const ProductDetail = () => {
   }, [uid]);
 
   if (!basket) {
-    return <div>Loading...</div>;
+    return <div className="loading">Loading...</div>;
   }
 
   return (
-    <div>
+    <div className="basket-detail">
       <h2>{basket.title}</h2>
       <p>{basket.description}</p>
-      {/* Display more details as needed */}
-      <p>Category: {basket.category.name}</p>
-      <p>Date-Time: {new Date(basket.date_time).toLocaleString()}</p>
+      <p>
+        <strong>Category:</strong> {basket.category.name}
+      </p>
+      <p>
+        <strong>Date-Time:</strong> {new Date(basket.date_time).toLocaleString()}
+      </p>
     </div>
   );
 };
 
-export default ProductDetail;
+export default BasketDetail;
