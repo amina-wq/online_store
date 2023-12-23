@@ -1,0 +1,34 @@
+version: '3.9'
+services:
+  postgres:
+    extends:
+      file: docker-compose.yaml
+      service: postgres
+    ports:
+      - "5432:5432"
+
+  redis:
+    extends:
+      file: docker-compose.yaml
+      service: redis
+    ports:
+      - "6379:6379"
+
+  online-store:
+    extends:
+      file: docker-compose.yaml
+      service: online-store
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/opt/baskets:rw
+      - ./backend/static:/opt/baskets/static:rw
+
+  nginx:
+    extends:
+      file: docker-compose.yaml
+      service: nginx
+
+volumes:
+  database:
+
