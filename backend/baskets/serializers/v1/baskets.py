@@ -1,6 +1,5 @@
 from rest_framework import serializers
-from django.utils import timezone
-from .models import Basket, Category
+from baskets.models import Basket, Category
 
 
 class CategorySerializer(serializers.ModelSerializer):

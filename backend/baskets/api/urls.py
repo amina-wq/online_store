@@ -1,5 +1,5 @@
 from django.urls import path, include
 
 urlpatterns = [
-    path("api/", include("baskets.api.urls")),
+    path("v1/", include("baskets.api.v1.urls")),
 ]
