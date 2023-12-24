@@ -1,3 +1,5 @@
+mkdir ./baskets/static
+
 python manage.py collectstatic --noinput
 
 python manage.py migrate
