@@ -3,6 +3,7 @@
 from django.db import migrations, models
 import django.utils.timezone
 
+# fmt: off
 
 class Migration(migrations.Migration):
     dependencies = [
@@ -58,3 +59,5 @@ class Migration(migrations.Migration):
             field=models.CharField(db_index=True, max_length=100, verbose_name="Name"),
         ),
     ]
+
+# fmt: on

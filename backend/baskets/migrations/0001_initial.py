@@ -5,7 +5,7 @@ import django.db.models.deletion
 import django.utils.timezone
 import uuid
 
-
+# fmt: off
 class Migration(migrations.Migration):
     initial = True
 
@@ -88,3 +88,5 @@ class Migration(migrations.Migration):
             ),
         ),
     ]
+
+# fmt: on

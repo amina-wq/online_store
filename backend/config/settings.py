@@ -4,6 +4,8 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
+# fmt: off
+
 load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -207,3 +209,5 @@ if DEBUG:
     }
 
     CORS_ORIGIN_ALLOW_ALL = True
+
+# fmt: on
