@@ -46,6 +46,7 @@
     position: relative;
     width: 274px;
     margin: 30px;
+    cursor: pointer;
 }
 
 .basket-card .basket-info {
@@ -179,19 +180,145 @@
     padding: 0;
 }
 
-/* BasketDetail.css */
 .basket-detail {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #fce4ec; /* Soft pink color */
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fce4ec; /* Soft pink color */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .loading {
-  text-align: center;
-  margin: 20px;
-  font-size: 18px;
-  color: #ff69b4; /* Soft pink color */
+    text-align: center;
+    margin: 20px;
+    font-size: 18px;
+    color: #ff69b4; /* Soft pink color */
+}
+
+.form {
+display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 0;
+
+}
+
+.authorization-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 86.5vh;
+    background-color: #FDEBEB;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.enter-email-box,
+.enter-password-box {
+    margin-bottom: 15px;
+}
+
+.text-wrapper {
+    font-size: 28px;
+    margin-bottom: 5px;
+    font-family: "Caveat", Helvetica, serif;
+}
+
+input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-button {
+    background-color: #FDEBEB;
+    color: #333;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #ddd;
+    }
+}
+
+.header {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+}
+
+.header .log-in-button {
+    background-color: #f1d4d4;
+    border-radius: 25px;
+    box-shadow: 0 4px 4px #00000040;
+    height: 88px;;
+    overflow: hidden;
+    width: 391px;
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.header .text-wrapper {
+    color: #000000;
+    font-family: "Caveat", Helvetica, serif;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.header .logo {
+    height: 155px;
+    object-fit: cover;
+    width: 183px;
+}
+
+.header .navbar {
+    background-color: #fdebeb;
+    border-radius: 10px;
+    height: 80px;
+    overflow: hidden;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+
+/* Add this style to your existing CSS or create a new CSS file */
+.form-switch button {
+  background-color: #FDEBEB;
+  color: #333;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #ddd;
+  }
 }
