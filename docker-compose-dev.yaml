@@ -24,6 +24,20 @@ services:
       - ./backend:/opt/baskets:rw
       - ./backend/static:/opt/baskets/static:rw
 
+  frontend:
+    extends:
+      file: docker-compose.yaml
+      service: frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/opt/frontend:rw
+
+  celery:
+      extends:
+          file: docker-compose.yaml
+          service: celery
+
   nginx:
     extends:
       file: docker-compose.yaml
@@ -31,4 +45,3 @@ services:
 
 volumes:
   database:
-
