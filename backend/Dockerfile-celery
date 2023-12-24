@@ -15,4 +15,4 @@ COPY . .
 
 EXPOSE 8000
 
-ENTRYPOINT ["bash", "app_entrypoint.sh"]
+ENTRYPOINT ["bash", "celery_entrypoint.sh"]
