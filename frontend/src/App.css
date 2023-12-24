@@ -216,7 +216,7 @@ display: flex;
     background-color: #FDEBEB;
 }
 
-form {
+.form {
     display: flex;
     flex-direction: column;
     width: 300px;
@@ -233,7 +233,7 @@ form {
     font-family: "Caveat", Helvetica, serif;
 }
 
-input {
+.input {
     width: 100%;
     padding: 10px 0;
     font-size: 16px;
@@ -309,16 +309,16 @@ input {
 
 /* Add this style to your existing CSS or create a new CSS file */
 .form-switch button {
-  background-color: #FDEBEB;
-  color: #333;
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+    background-color: #FDEBEB;
+    color: #333;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 
-  &:hover {
-    background-color: #ddd;
-  }
+    &:hover {
+        background-color: #ddd;
+    }
 }
